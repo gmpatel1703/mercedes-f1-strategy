@@ -1,0 +1,2191 @@
+{
+  "meta": {
+    "last_updated": "2026-06-14T08:44:11.879602+00:00",
+    "generated_by": "update_data.py",
+    "current_season": 2026,
+    "current_round": 6,
+    "total_rounds": 22,
+    "next_race": {
+      "round": 7,
+      "name": "Spain",
+      "date": "2026-06-14",
+      "circuit": "Barcelona",
+      "status": "live"
+    },
+    "data_seasons": "2018\u20132026",
+    "total_race_entries": 358
+  },
+  "gp_model": {
+    "Azerbaijan": {
+      "total_laps": 51,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 8,
+          "pct": 57
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 29
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 14
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 16.3,
+          "std": 10.1,
+          "min": 9,
+          "max": 40,
+          "count": 14
+        },
+        "2": {
+          "avg": 41.5,
+          "std": 6.6,
+          "min": 33,
+          "max": 49,
+          "count": 6
+        },
+        "3": {
+          "avg": 48.0,
+          "std": 0.0,
+          "min": 48,
+          "max": 48,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 2.2,
+        "1-stop": -1.0,
+        "3-stop": -7.5
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Australia": {
+      "total_laps": 58,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 9,
+          "pct": 64
+        },
+        "2-stop": {
+          "count": 2,
+          "pct": 14
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "5-stop": {
+          "count": 2,
+          "pct": 14
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 13.2,
+          "std": 7.7,
+          "min": 2,
+          "max": 25,
+          "count": 14
+        },
+        "2": {
+          "avg": 22.8,
+          "std": 22.5,
+          "min": 3,
+          "max": 55,
+          "count": 5
+        },
+        "3": {
+          "avg": 21.7,
+          "std": 25.0,
+          "min": 4,
+          "max": 57,
+          "count": 3
+        },
+        "4": {
+          "avg": 33.5,
+          "std": 0.5,
+          "min": 33,
+          "max": 34,
+          "count": 2
+        },
+        "5": {
+          "avg": 44.0,
+          "std": 0.0,
+          "min": 44,
+          "max": 44,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 1.2,
+        "3-stop": 1.0,
+        "2-stop": -10.0,
+        "5-stop": 6.5
+      },
+      "driver_tendency": {
+        "George Russell": "5-stop",
+        "kimi-antonelli": "5-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "George Russell",
+          "grid": 1,
+          "finish": 1,
+          "strategy": "1-stop",
+          "points": 25
+        },
+        {
+          "driver": "kimi-antonelli",
+          "grid": 2,
+          "finish": 2,
+          "strategy": "1-stop",
+          "points": 18
+        }
+      ]
+    },
+    "Sao Paulo": {
+      "total_laps": 71,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "2-stop": {
+          "count": 8,
+          "pct": 57
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "4-stop": {
+          "count": 4,
+          "pct": 29
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 18.7,
+          "std": 10.3,
+          "min": 1,
+          "max": 34,
+          "count": 14
+        },
+        "2": {
+          "avg": 32.2,
+          "std": 19.4,
+          "min": 2,
+          "max": 59,
+          "count": 13
+        },
+        "3": {
+          "avg": 31.8,
+          "std": 17.7,
+          "min": 18,
+          "max": 66,
+          "count": 5
+        },
+        "4": {
+          "avg": 43.8,
+          "std": 1.9,
+          "min": 41,
+          "max": 46,
+          "count": 4
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.0,
+        "2-stop": 0.3,
+        "3-stop": -4.0,
+        "4-stop": 1.3
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "China": {
+      "total_laps": 56,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 6,
+          "pct": 60
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 40
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 14.6,
+          "std": 4.7,
+          "min": 9,
+          "max": 22,
+          "count": 10
+        },
+        "2": {
+          "avg": 29.0,
+          "std": 7.0,
+          "min": 21,
+          "max": 36,
+          "count": 4
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.3,
+        "2-stop": 2.8
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 10,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "kimi-antonelli",
+          "grid": 1,
+          "finish": 1,
+          "strategy": "1-stop",
+          "points": 25
+        },
+        {
+          "driver": "George Russell",
+          "grid": 2,
+          "finish": 2,
+          "strategy": "1-stop",
+          "points": 18
+        }
+      ]
+    },
+    "Hungary": {
+      "total_laps": 70,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 6
+        },
+        "1-stop": {
+          "count": 3,
+          "pct": 19
+        },
+        "2-stop": {
+          "count": 9,
+          "pct": 56
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 12
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 6
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 16.7,
+          "std": 9.9,
+          "min": 2,
+          "max": 33,
+          "count": 15
+        },
+        "2": {
+          "avg": 40.8,
+          "std": 12.5,
+          "min": 4,
+          "max": 53,
+          "count": 12
+        },
+        "3": {
+          "avg": 44.7,
+          "std": 19.4,
+          "min": 19,
+          "max": 66,
+          "count": 3
+        },
+        "4": {
+          "avg": 47.0,
+          "std": 0.0,
+          "min": 47,
+          "max": 47,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.7,
+        "2-stop": 2.2,
+        "3-stop": -0.5,
+        "4-stop": -1.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Germany": {
+      "total_laps": 67,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 1,
+          "pct": 25
+        },
+        "2-stop": {
+          "count": 1,
+          "pct": 25
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 25
+        },
+        "6-stop": {
+          "count": 1,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 19.0,
+          "std": 16.7,
+          "min": 3,
+          "max": 42,
+          "count": 4
+        },
+        "2": {
+          "avg": 35.3,
+          "std": 11.8,
+          "min": 26,
+          "max": 52,
+          "count": 3
+        },
+        "3": {
+          "avg": 29.5,
+          "std": 0.5,
+          "min": 29,
+          "max": 30,
+          "count": 2
+        },
+        "4": {
+          "avg": 46.5,
+          "std": 0.5,
+          "min": 46,
+          "max": 47,
+          "count": 2
+        },
+        "5": {
+          "avg": 53.0,
+          "std": 0.0,
+          "min": 53,
+          "max": 53,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 13.0,
+        "2-stop": 0.0,
+        "6-stop": -8.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "2-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 4,
+      "latest_season": 2019,
+      "result_2026": null
+    },
+    "Netherlands": {
+      "total_laps": 72,
+      "strategy_distribution": {
+        "2-stop": {
+          "count": 4,
+          "pct": 40
+        },
+        "3-stop": {
+          "count": 4,
+          "pct": 40
+        },
+        "5-stop": {
+          "count": 1,
+          "pct": 10
+        },
+        "7-stop": {
+          "count": 1,
+          "pct": 10
+        }
+      },
+      "most_common_strategy": "3-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 21.2,
+          "std": 9.5,
+          "min": 3,
+          "max": 31,
+          "count": 10
+        },
+        "2": {
+          "avg": 42.7,
+          "std": 17.9,
+          "min": 9,
+          "max": 67,
+          "count": 10
+        },
+        "3": {
+          "avg": 49.7,
+          "std": 16.8,
+          "min": 16,
+          "max": 70,
+          "count": 6
+        },
+        "4": {
+          "avg": 60.0,
+          "std": 0.0,
+          "min": 60,
+          "max": 60,
+          "count": 2
+        },
+        "5": {
+          "avg": 63.5,
+          "std": 0.5,
+          "min": 63,
+          "max": 64,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "3-stop": -0.2,
+        "2-stop": 1.0,
+        "5-stop": 7.0,
+        "7-stop": -14.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "3-stop"
+      },
+      "data_points": 10,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Canada": {
+      "total_laps": 70,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "1-stop": {
+          "count": 5,
+          "pct": 36
+        },
+        "2-stop": {
+          "count": 6,
+          "pct": 43
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 14
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 20.8,
+          "std": 8.5,
+          "min": 9,
+          "max": 36,
+          "count": 13
+        },
+        "2": {
+          "avg": 45.5,
+          "std": 8.4,
+          "min": 38,
+          "max": 67,
+          "count": 8
+        },
+        "3": {
+          "avg": 54.0,
+          "std": 0.0,
+          "min": 54,
+          "max": 54,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.2,
+        "2-stop": 1.3,
+        "3-stop": 0.5
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "kimi-antonelli",
+          "grid": 2,
+          "finish": 1,
+          "strategy": "1-stop",
+          "points": 25
+        },
+        {
+          "driver": "George Russell",
+          "grid": 1,
+          "finish": "DNF",
+          "strategy": "0-stop",
+          "points": null
+        }
+      ]
+    },
+    "Qatar": {
+      "total_laps": 57,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 12
+        },
+        "1-stop": {
+          "count": 1,
+          "pct": 12
+        },
+        "2-stop": {
+          "count": 3,
+          "pct": 38
+        },
+        "4-stop": {
+          "count": 3,
+          "pct": 38
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "4-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 17.6,
+          "std": 12.2,
+          "min": 1,
+          "max": 34,
+          "count": 7
+        },
+        "2": {
+          "avg": 31.7,
+          "std": 8.6,
+          "min": 14,
+          "max": 42,
+          "count": 6
+        },
+        "3": {
+          "avg": 34.7,
+          "std": 1.9,
+          "min": 32,
+          "max": 36,
+          "count": 3
+        },
+        "4": {
+          "avg": 44.7,
+          "std": 5.6,
+          "min": 37,
+          "max": 50,
+          "count": 3
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": -0.7,
+        "4-stop": -3.7
+      },
+      "driver_tendency": {
+        "George Russell": "4-stop",
+        "Lewis Hamilton": "4-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 8,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Japan": {
+      "total_laps": 53,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 5,
+          "pct": 36
+        },
+        "2-stop": {
+          "count": 7,
+          "pct": 50
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 14
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 16.7,
+          "std": 9.3,
+          "min": 1,
+          "max": 31,
+          "count": 16
+        },
+        "2": {
+          "avg": 24.4,
+          "std": 12.8,
+          "min": 7,
+          "max": 42,
+          "count": 7
+        },
+        "3": {
+          "avg": 38.0,
+          "std": 1.0,
+          "min": 37,
+          "max": 39,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.2,
+        "2-stop": 0.6,
+        "3-stop": 0.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "kimi-antonelli",
+          "grid": 1,
+          "finish": 1,
+          "strategy": "2-stop",
+          "points": 25
+        },
+        {
+          "driver": "George Russell",
+          "grid": 2,
+          "finish": 4,
+          "strategy": "2-stop",
+          "points": 12
+        }
+      ]
+    },
+    "Monaco": {
+      "total_laps": 78,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 6
+        },
+        "1-stop": {
+          "count": 5,
+          "pct": 31
+        },
+        "2-stop": {
+          "count": 9,
+          "pct": 56
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 6
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 24.3,
+          "std": 18.7,
+          "min": 1,
+          "max": 69,
+          "count": 14
+        },
+        "2": {
+          "avg": 49.0,
+          "std": 19.3,
+          "min": 12,
+          "max": 71,
+          "count": 10
+        },
+        "3": {
+          "avg": 49.0,
+          "std": 19.0,
+          "min": 30,
+          "max": 68,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.6,
+        "2-stop": -0.6,
+        "3-stop": 0.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "kimi-antonelli",
+          "grid": 1,
+          "finish": 1,
+          "strategy": "2-stop",
+          "points": 25
+        },
+        {
+          "driver": "George Russell",
+          "grid": 6,
+          "finish": 12,
+          "strategy": "2-stop",
+          "points": null
+        }
+      ]
+    },
+    "Turkey": {
+      "total_laps": 58,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 3,
+          "pct": 75
+        },
+        "2-stop": {
+          "count": 1,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 25.5,
+          "std": 18.6,
+          "min": 7,
+          "max": 50,
+          "count": 4
+        },
+        "2": {
+          "avg": 46.0,
+          "std": 0.0,
+          "min": 46,
+          "max": 46,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 3.7,
+        "2-stop": -5.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "2-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 4,
+      "latest_season": 2021,
+      "result_2026": null
+    },
+    "Emilia Romagna": {
+      "total_laps": 63,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 5,
+          "pct": 50
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 40
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 10
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 22.9,
+          "std": 6.0,
+          "min": 11,
+          "max": 30,
+          "count": 10
+        },
+        "2": {
+          "avg": 43.0,
+          "std": 10.6,
+          "min": 29,
+          "max": 52,
+          "count": 5
+        },
+        "3": {
+          "avg": 32.0,
+          "std": 0.0,
+          "min": 32,
+          "max": 32,
+          "count": 1
+        },
+        "4": {
+          "avg": 33.0,
+          "std": 0.0,
+          "min": 33,
+          "max": 33,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": -1.2,
+        "4-stop": -1.0,
+        "1-stop": 3.3
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 10,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Portugal": {
+      "total_laps": 66,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 2,
+          "pct": 50
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 25
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 21.2,
+          "std": 19.3,
+          "min": 2,
+          "max": 41,
+          "count": 4
+        },
+        "2": {
+          "avg": 3.0,
+          "std": 0.0,
+          "min": 3,
+          "max": 3,
+          "count": 2
+        },
+        "3": {
+          "avg": 36.5,
+          "std": 0.5,
+          "min": 36,
+          "max": 37,
+          "count": 2
+        },
+        "4": {
+          "avg": 63.0,
+          "std": 0.0,
+          "min": 63,
+          "max": 63,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.0,
+        "3-stop": 1.0,
+        "4-stop": -2.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "1-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 4,
+      "latest_season": 2021,
+      "result_2026": null
+    },
+    "Great Britain": {
+      "total_laps": 52,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 6
+        },
+        "1-stop": {
+          "count": 7,
+          "pct": 44
+        },
+        "2-stop": {
+          "count": 6,
+          "pct": 38
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 12
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 16.0,
+          "std": 10.5,
+          "min": 1,
+          "max": 33,
+          "count": 15
+        },
+        "2": {
+          "avg": 32.8,
+          "std": 12.3,
+          "min": 9,
+          "max": 50,
+          "count": 8
+        },
+        "3": {
+          "avg": 29.5,
+          "std": 9.5,
+          "min": 20,
+          "max": 39,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.8,
+        "2-stop": -2.3,
+        "3-stop": 2.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "3-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "United States": {
+      "total_laps": 56,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "1-stop": {
+          "count": 5,
+          "pct": 36
+        },
+        "2-stop": {
+          "count": 7,
+          "pct": 50
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 7
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 20.8,
+          "std": 8.8,
+          "min": 11,
+          "max": 40,
+          "count": 13
+        },
+        "2": {
+          "avg": 36.2,
+          "std": 1.7,
+          "min": 34,
+          "max": 39,
+          "count": 8
+        },
+        "3": {
+          "avg": 54.0,
+          "std": 0.0,
+          "min": 54,
+          "max": 54,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 0.3,
+        "1-stop": -1.8,
+        "3-stop": -1.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "0-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Italy": {
+      "total_laps": 53,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 10,
+          "pct": 62
+        },
+        "2-stop": {
+          "count": 5,
+          "pct": 31
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 6
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 24.1,
+          "std": 6.2,
+          "min": 11,
+          "max": 36,
+          "count": 16
+        },
+        "2": {
+          "avg": 36.3,
+          "std": 9.1,
+          "min": 26,
+          "max": 49,
+          "count": 6
+        },
+        "3": {
+          "avg": 28.0,
+          "std": 0.0,
+          "min": 28,
+          "max": 28,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 3.6,
+        "2-stop": -1.6,
+        "3-stop": -6.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Russia": {
+      "total_laps": 53,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 6,
+          "pct": 75
+        },
+        "2-stop": {
+          "count": 2,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 22.2,
+          "std": 6.5,
+          "min": 12,
+          "max": 28,
+          "count": 8
+        },
+        "2": {
+          "avg": 48.0,
+          "std": 1.0,
+          "min": 47,
+          "max": 49,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.5,
+        "2-stop": 7.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "1-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 8,
+      "latest_season": 2021,
+      "result_2026": null
+    },
+    "Abu Dhabi": {
+      "total_laps": 58,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 12,
+          "pct": 75
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 19.4,
+          "std": 8.4,
+          "min": 7,
+          "max": 34,
+          "count": 16
+        },
+        "2": {
+          "avg": 37.0,
+          "std": 2.5,
+          "min": 34,
+          "max": 40,
+          "count": 4
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 1.2,
+        "2-stop": 0.2
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Belgium": {
+      "total_laps": 44,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 3,
+          "pct": 19
+        },
+        "1-stop": {
+          "count": 7,
+          "pct": 44
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 25
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 12
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 12.4,
+          "std": 6.6,
+          "min": 1,
+          "max": 23,
+          "count": 13
+        },
+        "2": {
+          "avg": 22.5,
+          "std": 9.6,
+          "min": 2,
+          "max": 30,
+          "count": 6
+        },
+        "3": {
+          "avg": 35.5,
+          "std": 6.5,
+          "min": 29,
+          "max": 42,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 0.7,
+        "3-stop": 6.0,
+        "1-stop": 0.8,
+        "0-stop": 0.5
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Saudi Arabia": {
+      "total_laps": 50,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 8,
+          "pct": 80
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 20
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 19.4,
+          "std": 10.2,
+          "min": 7,
+          "max": 40,
+          "count": 10
+        },
+        "2": {
+          "avg": 13.0,
+          "std": 0.0,
+          "min": 13,
+          "max": 13,
+          "count": 2
+        },
+        "3": {
+          "avg": 15.0,
+          "std": 0.0,
+          "min": 15,
+          "max": 15,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "3-stop": -0.5,
+        "1-stop": 0.5
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 10,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Mexico": {
+      "total_laps": 71,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 6,
+          "pct": 43
+        },
+        "2-stop": {
+          "count": 6,
+          "pct": 43
+        },
+        "3-stop": {
+          "count": 1,
+          "pct": 7
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 7
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 23.6,
+          "std": 9.4,
+          "min": 1,
+          "max": 36,
+          "count": 14
+        },
+        "2": {
+          "avg": 45.9,
+          "std": 10.4,
+          "min": 34,
+          "max": 69,
+          "count": 8
+        },
+        "3": {
+          "avg": 62.5,
+          "std": 0.5,
+          "min": 62,
+          "max": 63,
+          "count": 2
+        },
+        "4": {
+          "avg": 67.0,
+          "std": 0.0,
+          "min": 67,
+          "max": 67,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 0.0,
+        "3-stop": 0.0,
+        "1-stop": 1.3,
+        "4-stop": -14.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 14,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Spain": {
+      "total_laps": 66,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 2,
+          "pct": 12
+        },
+        "2-stop": {
+          "count": 10,
+          "pct": 62
+        },
+        "3-stop": {
+          "count": 4,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 20.6,
+          "std": 6.6,
+          "min": 1,
+          "max": 28,
+          "count": 16
+        },
+        "2": {
+          "avg": 43.3,
+          "std": 7.6,
+          "min": 22,
+          "max": 53,
+          "count": 14
+        },
+        "3": {
+          "avg": 54.5,
+          "std": 6.0,
+          "min": 48,
+          "max": 64,
+          "count": 4
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.0,
+        "2-stop": 1.2,
+        "3-stop": 0.2
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "2-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "France": {
+      "total_laps": 53,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 7,
+          "pct": 88
+        },
+        "2-stop": {
+          "count": 1,
+          "pct": 12
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 19.1,
+          "std": 8.4,
+          "min": 1,
+          "max": 33,
+          "count": 8
+        },
+        "2": {
+          "avg": 39.0,
+          "std": 0.0,
+          "min": 39,
+          "max": 39,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.6,
+        "2-stop": -5.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Valtteri Bottas": "1-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 8,
+      "latest_season": 2022,
+      "result_2026": null
+    },
+    "Styria": {
+      "total_laps": 71,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 3,
+          "pct": 75
+        },
+        "2-stop": {
+          "count": 1,
+          "pct": 25
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 29.0,
+          "std": 2.9,
+          "min": 27,
+          "max": 34,
+          "count": 4
+        },
+        "2": {
+          "avg": 69.0,
+          "std": 0.0,
+          "min": 69,
+          "max": 69,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 1.3,
+        "2-stop": 0.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "1-stop",
+        "Lewis Hamilton": "1-stop"
+      },
+      "data_points": 4,
+      "latest_season": 2021,
+      "result_2026": null
+    },
+    "Singapore": {
+      "total_laps": 62,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 9,
+          "pct": 75
+        },
+        "2-stop": {
+          "count": 2,
+          "pct": 17
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 8
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 22.3,
+          "std": 5.2,
+          "min": 15,
+          "max": 34,
+          "count": 12
+        },
+        "2": {
+          "avg": 41.0,
+          "std": 4.2,
+          "min": 35,
+          "max": 44,
+          "count": 3
+        },
+        "3": {
+          "avg": 41.0,
+          "std": 0.0,
+          "min": 41,
+          "max": 41,
+          "count": 1
+        },
+        "4": {
+          "avg": 51.0,
+          "std": 0.0,
+          "min": 51,
+          "max": 51,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": -1.3,
+        "2-stop": -6.0
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "Lewis Hamilton": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 12,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "70Th Anniversary": {
+      "total_laps": 52,
+      "strategy_distribution": {
+        "2-stop": {
+          "count": 2,
+          "pct": 100
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 13.5,
+          "std": 0.5,
+          "min": 13,
+          "max": 14,
+          "count": 2
+        },
+        "2": {
+          "avg": 36.5,
+          "std": 4.5,
+          "min": 32,
+          "max": 41,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": -1.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "2-stop",
+        "Lewis Hamilton": "2-stop"
+      },
+      "data_points": 2,
+      "latest_season": 2020,
+      "result_2026": null
+    },
+    "Bahrain": {
+      "total_laps": 57,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 2,
+          "pct": 12
+        },
+        "2-stop": {
+          "count": 8,
+          "pct": 50
+        },
+        "3-stop": {
+          "count": 5,
+          "pct": 31
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 6
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 12.6,
+          "std": 5.7,
+          "min": 1,
+          "max": 26,
+          "count": 16
+        },
+        "2": {
+          "avg": 28.3,
+          "std": 7.9,
+          "min": 4,
+          "max": 37,
+          "count": 14
+        },
+        "3": {
+          "avg": 39.2,
+          "std": 9.5,
+          "min": 25,
+          "max": 54,
+          "count": 6
+        },
+        "4": {
+          "avg": 38.0,
+          "std": 0.0,
+          "min": 38,
+          "max": 38,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 3.5,
+        "2-stop": 0.9,
+        "3-stop": 0.2,
+        "4-stop": -6.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "3-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Tuscany": {
+      "total_laps": 59,
+      "strategy_distribution": {
+        "5-stop": {
+          "count": 2,
+          "pct": 100
+        }
+      },
+      "most_common_strategy": "5-stop",
+      "recent_most_common": "5-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 7.0,
+          "std": 0.0,
+          "min": 7,
+          "max": 7,
+          "count": 2
+        },
+        "2": {
+          "avg": 8.0,
+          "std": 0.0,
+          "min": 8,
+          "max": 8,
+          "count": 2
+        },
+        "3": {
+          "avg": 31.5,
+          "std": 0.5,
+          "min": 31,
+          "max": 32,
+          "count": 2
+        },
+        "4": {
+          "avg": 43.5,
+          "std": 0.5,
+          "min": 43,
+          "max": 44,
+          "count": 2
+        },
+        "5": {
+          "avg": 45.0,
+          "std": 0.0,
+          "min": 45,
+          "max": 45,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "5-stop": 0.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "5-stop",
+        "Lewis Hamilton": "5-stop"
+      },
+      "data_points": 2,
+      "latest_season": 2020,
+      "result_2026": null
+    },
+    "Eifel": {
+      "total_laps": 60,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 1,
+          "pct": 50
+        },
+        "2-stop": {
+          "count": 1,
+          "pct": 50
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 14.5,
+          "std": 1.5,
+          "min": 13,
+          "max": 16,
+          "count": 2
+        },
+        "2": {
+          "avg": 45.0,
+          "std": 0.0,
+          "min": 45,
+          "max": 45,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 1.0
+      },
+      "driver_tendency": {
+        "Valtteri Bottas": "1-stop",
+        "Lewis Hamilton": "2-stop"
+      },
+      "data_points": 2,
+      "latest_season": 2020,
+      "result_2026": null
+    },
+    "Sakhir": {
+      "total_laps": 87,
+      "strategy_distribution": {
+        "2-stop": {
+          "count": 1,
+          "pct": 50
+        },
+        "4-stop": {
+          "count": 1,
+          "pct": 50
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 47.0,
+          "std": 2.0,
+          "min": 45,
+          "max": 49,
+          "count": 2
+        },
+        "2": {
+          "avg": 62.0,
+          "std": 0.0,
+          "min": 62,
+          "max": 62,
+          "count": 2
+        },
+        "3": {
+          "avg": 63.0,
+          "std": 0.0,
+          "min": 63,
+          "max": 63,
+          "count": 1
+        },
+        "4": {
+          "avg": 78.0,
+          "std": 0.0,
+          "min": 78,
+          "max": 78,
+          "count": 1
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": -7.0,
+        "4-stop": -7.0
+      },
+      "driver_tendency": {
+        "George Russell": "4-stop",
+        "Valtteri Bottas": "2-stop"
+      },
+      "data_points": 2,
+      "latest_season": 2020,
+      "result_2026": null
+    },
+    "Las Vegas": {
+      "total_laps": 50,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 2,
+          "pct": 33
+        },
+        "2-stop": {
+          "count": 4,
+          "pct": 67
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 12.7,
+          "std": 5.1,
+          "min": 2,
+          "max": 17,
+          "count": 6
+        },
+        "2": {
+          "avg": 27.8,
+          "std": 2.5,
+          "min": 26,
+          "max": 32,
+          "count": 4
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "2-stop": 1.5,
+        "1-stop": 8.0
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 6,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Austria": {
+      "total_laps": 71,
+      "strategy_distribution": {
+        "0-stop": {
+          "count": 2,
+          "pct": 12
+        },
+        "1-stop": {
+          "count": 3,
+          "pct": 19
+        },
+        "2-stop": {
+          "count": 9,
+          "pct": 56
+        },
+        "3-stop": {
+          "count": 2,
+          "pct": 12
+        }
+      },
+      "most_common_strategy": "2-stop",
+      "recent_most_common": "2-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 20.9,
+          "std": 9.3,
+          "min": 2,
+          "max": 31,
+          "count": 14
+        },
+        "2": {
+          "avg": 43.6,
+          "std": 14.7,
+          "min": 14,
+          "max": 56,
+          "count": 11
+        },
+        "3": {
+          "avg": 41.5,
+          "std": 0.5,
+          "min": 41,
+          "max": 42,
+          "count": 2
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 0.7,
+        "2-stop": 1.1,
+        "3-stop": 0.5
+      },
+      "driver_tendency": {
+        "George Russell": "2-stop",
+        "Lewis Hamilton": "2-stop",
+        "kimi-antonelli": "0-stop"
+      },
+      "data_points": 16,
+      "latest_season": 2025,
+      "result_2026": null
+    },
+    "Miami": {
+      "total_laps": 57,
+      "strategy_distribution": {
+        "1-stop": {
+          "count": 10,
+          "pct": 100
+        }
+      },
+      "most_common_strategy": "1-stop",
+      "recent_most_common": "1-stop",
+      "pit_timing": {
+        "1": {
+          "avg": 26.6,
+          "std": 6.8,
+          "min": 17,
+          "max": 40,
+          "count": 10
+        }
+      },
+      "avg_position_gain_by_strategy": {
+        "1-stop": 1.7
+      },
+      "driver_tendency": {
+        "George Russell": "1-stop",
+        "kimi-antonelli": "1-stop"
+      },
+      "data_points": 10,
+      "latest_season": 2026,
+      "result_2026": [
+        {
+          "driver": "kimi-antonelli",
+          "grid": 1,
+          "finish": 1,
+          "strategy": "1-stop",
+          "points": 25
+        },
+        {
+          "driver": "George Russell",
+          "grid": 5,
+          "finish": 4,
+          "strategy": "1-stop",
+          "points": 12
+        }
+      ]
+    }
+  },
+  "calendar_2026": [
+    {
+      "round": 1,
+      "name": "Australia",
+      "date": "2026-03-08",
+      "circuit": "Melbourne",
+      "status": "done",
+      "results_2026": {
+        "George Russell": 1,
+        "kimi-antonelli": 2
+      }
+    },
+    {
+      "round": 2,
+      "name": "China",
+      "date": "2026-03-15",
+      "circuit": "Shanghai",
+      "sprint": true,
+      "status": "done",
+      "results_2026": {
+        "kimi-antonelli": 1,
+        "George Russell": 2
+      }
+    },
+    {
+      "round": 3,
+      "name": "Japan",
+      "date": "2026-03-29",
+      "circuit": "Suzuka",
+      "status": "done",
+      "results_2026": {
+        "kimi-antonelli": 1,
+        "George Russell": 4
+      }
+    },
+    {
+      "round": 4,
+      "name": "Miami",
+      "date": "2026-05-03",
+      "circuit": "Miami Gardens",
+      "status": "done",
+      "results_2026": {
+        "kimi-antonelli": 1,
+        "George Russell": 4
+      }
+    },
+    {
+      "round": 5,
+      "name": "Canada",
+      "date": "2026-05-25",
+      "circuit": "Montreal",
+      "status": "done",
+      "results_2026": {
+        "kimi-antonelli": 1,
+        "George Russell": "DNF"
+      }
+    },
+    {
+      "round": 6,
+      "name": "Monaco",
+      "date": "2026-06-07",
+      "circuit": "Monaco",
+      "status": "done",
+      "results_2026": {
+        "kimi-antonelli": 1,
+        "George Russell": 12
+      }
+    },
+    {
+      "round": 7,
+      "name": "Spain",
+      "date": "2026-06-14",
+      "circuit": "Barcelona",
+      "status": "live"
+    },
+    {
+      "round": 8,
+      "name": "Austria",
+      "date": "2026-06-28",
+      "circuit": "Red Bull Ring",
+      "status": "upcoming"
+    },
+    {
+      "round": 9,
+      "name": "Great Britain",
+      "date": "2026-07-05",
+      "circuit": "Silverstone",
+      "sprint": true,
+      "status": "upcoming"
+    },
+    {
+      "round": 10,
+      "name": "Belgium",
+      "date": "2026-07-19",
+      "circuit": "Spa-Francorchamps",
+      "status": "upcoming"
+    },
+    {
+      "round": 11,
+      "name": "Hungary",
+      "date": "2026-07-26",
+      "circuit": "Hungaroring",
+      "status": "upcoming"
+    },
+    {
+      "round": 12,
+      "name": "Netherlands",
+      "date": "2026-08-23",
+      "circuit": "Zandvoort",
+      "sprint": true,
+      "status": "upcoming"
+    },
+    {
+      "round": 13,
+      "name": "Italy",
+      "date": "2026-09-06",
+      "circuit": "Monza",
+      "status": "upcoming"
+    },
+    {
+      "round": 14,
+      "name": "Madrid",
+      "date": "2026-09-13",
+      "circuit": "Madrid",
+      "status": "upcoming"
+    },
+    {
+      "round": 15,
+      "name": "Azerbaijan",
+      "date": "2026-09-27",
+      "circuit": "Baku",
+      "status": "upcoming"
+    },
+    {
+      "round": 16,
+      "name": "Singapore",
+      "date": "2026-10-11",
+      "circuit": "Marina Bay",
+      "sprint": true,
+      "status": "upcoming"
+    },
+    {
+      "round": 17,
+      "name": "United States",
+      "date": "2026-10-25",
+      "circuit": "COTA",
+      "status": "upcoming"
+    },
+    {
+      "round": 18,
+      "name": "Mexico",
+      "date": "2026-11-01",
+      "circuit": "Mexico City",
+      "status": "upcoming"
+    },
+    {
+      "round": 19,
+      "name": "Sao Paulo",
+      "date": "2026-11-08",
+      "circuit": "Interlagos",
+      "status": "upcoming"
+    },
+    {
+      "round": 20,
+      "name": "Las Vegas",
+      "date": "2026-11-21",
+      "circuit": "Las Vegas Strip",
+      "status": "upcoming"
+    },
+    {
+      "round": 21,
+      "name": "Qatar",
+      "date": "2026-11-29",
+      "circuit": "Lusail",
+      "status": "upcoming"
+    },
+    {
+      "round": 22,
+      "name": "Abu Dhabi",
+      "date": "2026-12-06",
+      "circuit": "Yas Marina",
+      "status": "upcoming"
+    }
+  ],
+  "driver_stats_2026": {
+    "George Russell": {
+      "races": 6,
+      "wins": 1,
+      "podiums": 2,
+      "points": 67,
+      "avg_finish": 4.6
+    },
+    "kimi-antonelli": {
+      "races": 6,
+      "wins": 5,
+      "podiums": 6,
+      "points": 143,
+      "avg_finish": 1.2
+    }
+  }
+}
