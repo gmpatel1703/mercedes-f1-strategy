@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mercedes F1 Strategy Predictor 2026</title>
+<style>
+  :root {
+    --teal: #00D2BE;
+    --red: #E8002D;
+    --dark: #1a1a1a;
+    --bg: #f5f5f5;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --faint: #999999;
+    --green: #0d8a45;
+    --amber: #8a5500;
+    --blue: #185fa5;
+    --danger: #a32d2d;
+    --success-bg: rgba(13,138,69,.08);
+    --amber-bg: rgba(138,85,0,.08);
+    --blue-bg: rgba(24,95,165,.08);
+    --danger-bg: rgba(163,45,45,.08);
+    --teal-bg: rgba(0,210,190,.08);
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --bg:#111;--card:#1e1e1e;--border:#333;
+      --text:#f0f0f0;--muted:#999;--faint:#666;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+  .wrap{max-width:780px;margin:0 auto;padding:1.5rem 1rem}
+  /* Header */
+  .header{display:flex;align-items:center;gap:14px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--border)}
+  .logo{width:42px;height:42px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .logo-inner{width:20px;height:20px;border-radius:50%;background:var(--dark)}
+  h1{font-size:20px;font-weight:600;color:var(--text)}
+  .tagline{font-size:13px;color:var(--muted);margin-top:2px}
+  /* Banner */
+  .banner{display:flex;align-items:center;gap:8px;padding:.625rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:10px;font-size:13px;color:var(--muted);margin-bottom:1.5rem;flex-wrap:wrap}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite;flex-shrink:0}
+  .update-time{margin-left:auto;font-size:12px;color:var(--faint)}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  /* Tabs */
+  .tabs{display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.5rem}
+  .tab{flex:1;padding:9px 12px;font-size:13px;font-weight:500;text-align:center;cursor:pointer;background:transparent;border:none;color:var(--muted);transition:all .15s}
+  .tab.active{background:var(--card);color:var(--text);box-shadow:inset 0 0 0 1px var(--border)}
+  .tab:hover:not(.active){color:var(--text)}
+  /* Card */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+  .card+.card{margin-top:1rem}
+  .sec-label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:.875rem}
+  /* Form */
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+  .field label{display:block;font-size:13px;font-weight:500;margin-bottom:5px}
+  select,input[type=number]{width:100%;padding:9px 12px;font-size:14px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--text);outline:none}
+  select:focus,input:focus{border-color:var(--teal)}
+  .w-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .wbtn{padding:8px;font-size:13px;border:1px solid var(--border);border-radius:8px;background:var(--card);color:var(--muted);cursor:pointer;text-align:center;transition:all .15s}
+  .wbtn.active{border-color:var(--teal);background:var(--teal-bg);color:var(--text);font-weight:500}
+  .pbtn{width:100%;padding:11px;font-size:14px;font-weight:600;border:1.5px solid var(--teal);border-radius:8px;background:var(--teal-bg);color:var(--text);cursor:pointer;margin-top:8px;transition:all .15s}
+  .pbtn:hover{background:rgba(0,210,190,.18)}
+  /* Metrics */
+  .metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1rem}
+  .metric{background:var(--bg);border-radius:8px;padding:.875rem 1rem}
+  .ml{font-size:11px;color:var(--muted);margin-bottom:3px}
+  .mv{font-size:24px;font-weight:700}
+  .ms{font-size:11px;color:var(--muted);margin-top:2px}
+  /* Badges */
+  .badge{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:600}
+  .bg{background:var(--success-bg);color:var(--green)}
+  .ba{background:var(--amber-bg);color:var(--amber)}
+  .br{background:var(--danger-bg);color:var(--danger)}
+  .bt{background:var(--teal-bg);color:#0a6b5e}
+  .bb{background:var(--blue-bg);color:var(--blue)}
+  /* Stint timeline */
+  .timeline{display:flex;align-items:flex-start;gap:0;margin:.875rem 0 1.125rem}
+  .stint-col{display:flex;flex-direction:column;align-items:center;gap:3px}
+  .stint-bar{width:100%;height:28px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff}
+  .stint-label{font-size:10px;color:var(--muted)}
+  .pit-sep{display:flex;flex-direction:column;align-items:center;padding-top:14px;gap:1px;flex-shrink:0;width:28px}
+  .pit-line{width:2px;height:28px;background:var(--red);border-radius:1px;position:relative}
+  .pit-dot-mark{width:8px;height:8px;border-radius:50%;background:var(--red);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .pit-lap-tag{font-size:9px;color:var(--red);font-weight:600;white-space:nowrap}
+  /* Pit stop cards */
+  .stop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:.625rem}
+  .stop-card{border:1px solid var(--border);border-radius:8px;padding:.75rem 1rem}
+  .sn{font-size:11px;font-weight:600;color:var(--muted)}
+  .sl{font-size:24px;font-weight:700;margin:3px 0}
+  .sr{font-size:11px;color:var(--muted)}
+  /* Strategy bar chart */
+  .strat-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+  .strat-name{font-size:12px;min-width:54px}
+  .strat-track{flex:1;height:7px;border-radius:4px;background:var(--bg);overflow:hidden}
+  .strat-fill{height:100%;border-radius:4px}
+  .strat-pct{font-size:12px;color:var(--muted);min-width:30px;text-align:right}
+  /* Calendar */
+  .cal-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+  .cal-row:last-child{border:none}
+  .cal-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .cal-name{flex:1;font-weight:500}
+  .cal-result{font-size:12px;color:var(--muted)}
+  .cal-date{font-size:12px;color:var(--muted);min-width:68px;text-align:right}
+  /* Form table */
+  .form-table{width:100%;border-collapse:collapse;font-size:13px}
+  .form-table th{text-align:center;padding:5px 4px;font-size:11px;font-weight:600;color:var(--muted);border-bottom:1px solid var(--border)}
+  .form-table th:first-child{text-align:left}
+  .form-table td{padding:6px 4px;text-align:center;border-bottom:1px solid var(--border)}
+  .form-table td:first-child{text-align:left;font-weight:500}
+  .form-table tr:last-child td{border:none}
+  /* Panel visibility */
+  .panel{display:none}
+  .panel.active{display:block}
+  /* Loading */
+  .loading{text-align:center;padding:3rem;color:var(--muted)}
+  .spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 1rem}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* Empty */
+  .empty{text-align:center;padding:2.5rem 1rem;color:var(--muted)}
+  /* Driver stats */
+  .driver-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1rem}
+  .driver-card{border:1px solid var(--border);border-radius:10px;padding:1rem}
+  .driver-name{font-size:15px;font-weight:600;margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+  .driver-num{font-size:12px;padding:2px 7px;border-radius:5px;background:var(--teal-bg);color:#0a6b5e;font-weight:700}
+  .driver-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ds{background:var(--bg);border-radius:6px;padding:.5rem .75rem}
+  .ds-l{font-size:10px;color:var(--muted)}
+  .ds-v{font-size:18px;font-weight:700}
+  /* Responsive */
+  @media(max-width:520px){
+    .row2,.metrics,.driver-grid{grid-template-columns:1fr}
+    .w-btns{grid-template-columns:1fr 1fr 1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="logo"><div class="logo-inner"></div></div>
+    <div>
+      <h1>Mercedes F1 Strategy Predictor</h1>
+      <div class="tagline">2026 season · Russell &amp; Antonelli · Auto-updates after every race</div>
+    </div>
+  </div>
+
+  <div class="banner" id="banner">
+    <div class="spinner" style="width:14px;height:14px;margin:0;border-width:2px"></div>
+    <span>Loading latest race data…</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('predict')">🏁 Predict</button>
+    <button class="tab" onclick="switchTab('calendar')">📅 Calendar</button>
+    <button class="tab" onclick="switchTab('form')">📊 2026 Form</button>
+  </div>
+
+  <!-- Predict panel -->
+  <div id="panel-predict" class="panel active">
+    <div class="card">
+      <div class="sec-label">Race setup</div>
+      <div class="row2">
+        <div class="field"><label>Grand Prix</label><select id="gp-sel" onchange="clearResult()"><option value="">Select a race…</option></select></div>
+        <div class="field"><label>Driver</label>
+          <select id="drv-sel" onchange="clearResult()">
+            <option value="George Russell">George Russell #63</option>
+            <option value="Kimi Antonelli">Kimi Antonelli #12</option>
+          </select>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label>Starting grid position</label><input type="number" id="grid-pos" min="1" max="22" value="1" oninput="clearResult()" /></div>
+        <div class="field"><label>Weather</label>
+          <div class="w-btns">
+            <div class="wbtn active" onclick="setW(this,'dry')">☀️ Dry</div>
+            <div class="wbtn" onclick="setW(this,'mixed')">🌤 Mixed</div>
+            <div class="wbtn" onclick="setW(this,'wet')">🌧 Wet</div>
+          </div>
+        </div>
+      </div>
+      <button class="pbtn" onclick="predict()">⚡ Generate strategy prediction</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <!-- Calendar panel -->
+  <div id="panel-calendar" class="panel">
+    <div class="card"><div class="sec-label">2026 Formula 1 Season — 22 Races</div><div id="cal-list"><div class="loading"><div class="spinner"></div>Loading…</div></div></div>
+  </div>
+
+  <!-- Form panel -->
+  <div id="panel-form" class="panel">
+    <div id="driver-stats-wrap"></div>
+    <div class="card"><div class="sec-label">2026 Race-by-race results</div><div id="form-table"><div class="loading"><div class="spinner"></div>Loading…</div></div></div>
+  </div>
+
+</div>
+
+<script>
+// ── State ────────────────────────────────────────────────────────────────────
+let DATA = null;
+let selW = 'dry';
+const STINT_COLORS = ['#00D2BE','#1960B0','#059669','#D97706','#7C3AED'];
+
+// ── Data loading ─────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    // Try to load the live JSON from the same repo (works when hosted on GitHub Pages)
+    const res = await fetch('data/mercedes_strategy.json?_=' + Date.now());
+    if (!res.ok) throw new Error('fetch failed');
+    DATA = await res.json();
+  } catch(e) {
+    // Fallback: use embedded snapshot data (always works, may be slightly older)
+    DATA = FALLBACK_DATA;
+  }
+  onDataLoaded();
+}
+
+function onDataLoaded() {
+  renderBanner();
+  populateGPSelect();
+  renderCalendar();
+  renderForm();
+}
+
+function renderBanner() {
+  const m = DATA.meta;
+  const nr = m.next_race;
+  const updated = new Date(m.last_updated).toLocaleString('en-GB', {day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  const nrText = nr ? `<strong>Next: R${nr.round} ${nr.name}</strong> · ${fmtDate(nr.date)}` : 'Season complete';
+  document.getElementById('banner').innerHTML = `
+    <div class="live-dot"></div>
+    <span>R${m.current_round}/${m.total_rounds} complete · ${nrText}</span>
+    <span class="update-time">Updated ${updated} UTC</span>`;
+}
+
+function populateGPSelect() {
+  const sel = document.getElementById('gp-sel');
+  const cal = DATA.calendar_2026;
+  cal.forEach(r => {
+    const gpData = DATA.gp_model[r.name];
+    if (!gpData) return;
+    const opt = document.createElement('option');
+    opt.value = r.name;
+    const tag = r.status === 'live' ? ' ● LIVE' : r.status === 'done' ? ' ✓' : '';
+    opt.textContent = `R${r.round} · ${r.name} (${r.circuit})${tag}`;
+    if (r.status === 'live') opt.selected = true;
+    sel.appendChild(opt);
+  });
+  // Pre-select next upcoming if no live race
+  if (!sel.value) {
+    const next = cal.find(r => r.status === 'upcoming');
+    if (next && DATA.gp_model[next.name]) sel.value = next.name;
+  }
+}
+
+// ── Predict ──────────────────────────────────────────────────────────────────
+function predict() {
+  if (!DATA) return;
+  const gpName = document.getElementById('gp-sel').value;
+  const driver = document.getElementById('drv-sel').value;
+  const gridPos = Math.max(1, Math.min(22, parseInt(document.getElementById('grid-pos').value) || 1));
+  const area = document.getElementById('result');
+
+  if (!gpName) { area.innerHTML = '<div class="empty">Select a race above.</div>'; return; }
+  const gpData = DATA.gp_model[gpName];
+  if (!gpData) { area.innerHTML = '<div class="empty">No historical data for this circuit yet.</div>'; return; }
+  const calRace = DATA.calendar_2026.find(r => r.name === gpName);
+
+  // ── Strategy selection ──
+  // Use driver tendency if available, else recent most common, weighted by weather
+  let strat = (gpData.driver_tendency && gpData.driver_tendency[driver])
+    || gpData.recent_most_common
+    || gpData.most_common_strategy
+    || '1-stop';
+
+  // Exclude 0-stop (DNF races) from prediction
+  if (strat === '0-stop') strat = gpData.most_common_strategy || '1-stop';
+
+  if (selW === 'wet') {
+    const n = Math.min(parseInt(strat) + 1, 4); strat = n + '-stop';
+  } else if (selW === 'mixed') {
+    const n = Math.min(parseInt(strat) + 1, 3); strat = n + '-stop';
+  }
+
+  const numStops = parseInt(strat);
+  const totalLaps = gpData.total_laps;
+
+  // ── Pit lap calculation ──
+  const pitLaps = calcPitLaps(gpData, numStops, totalLaps, gridPos);
+
+  // ── Position gain ──
+  const baseGain = gpData.avg_position_gain_by_strategy[strat] ?? 0;
+  const gain = baseGain
+    + (gridPos >= 10 ? 1.5 : 0)
+    + (gridPos >= 15 ? 1.0 : 0)
+    + (selW === 'wet' ? 2.0 : 0)
+    + (selW === 'mixed' ? 1.0 : 0);
+  const predFinish = Math.max(1, Math.min(22, Math.round(gridPos - gain)));
+
+  const dataPoints = gpData.data_points;
+  const conf = dataPoints >= 10 ? 'High' : dataPoints >= 5 ? 'Medium' : 'Low';
+  const confClass = dataPoints >= 10 ? 'bg' : dataPoints >= 5 ? 'ba' : 'br';
+  const wLabel = selW === 'dry' ? '☀️ Dry' : selW === 'mixed' ? '🌤 Mixed' : '🌧 Wet';
+  const sprintBadge = calRace?.sprint ? '<span class="badge bb">⚡ Sprint weekend</span>' : '';
+
+  // ── Stint timeline ──
+  let timeline = '';
+  let prev = 1;
+  for (let i = 0; i <= pitLaps.length; i++) {
+    const start = prev;
+    const end = i < pitLaps.length ? pitLaps[i] : totalLaps;
+    const len = end - start + (i === pitLaps.length ? 1 : 0);
+    const w = Math.max(6, Math.round((len / totalLaps) * 100));
+    const col = STINT_COLORS[i % STINT_COLORS.length];
+    const isLast = i === pitLaps.length;
+    timeline += `<div class="stint-col" style="flex:${w};min-width:26px">
+      <div class="stint-label">S${i+1}</div>
+      <div class="stint-bar" style="background:${col}">${len}L</div>
+      <div class="stint-label">${start}–${isLast ? totalLaps : end}</div>
+    </div>`;
+    if (!isLast) {
+      timeline += `<div class="pit-sep">
+        <div class="pit-line"><div class="pit-dot-mark"></div></div>
+        <div class="pit-lap-tag">L${pitLaps[i]}</div>
+      </div>`;
+    }
+    prev = end + 1;
+  }
+
+  // ── Pit stop cards ──
+  let stopCards = pitLaps.map((lap, i) => {
+    const t = gpData.pit_timing[String(i+1)];
+    const range = t ? `Historically L${t.min}–${t.max}` : 'Estimated';
+    return `<div class="stop-card">
+      <div class="sn">Pit stop ${i+1}</div>
+      <div class="sl">Lap ${lap}</div>
+      <div class="sr">${range}</div>
+    </div>`;
+  }).join('');
+
+  // ── Strategy distribution bars ──
+  let stratBars = Object.entries(gpData.strategy_distribution)
+    .filter(([s]) => s !== '0-stop')
+    .sort()
+    .map(([s, d]) => {
+      const sel = s === strat;
+      const col = sel ? 'var(--teal)' : '#b4b2a9';
+      return `<div class="strat-row">
+        <div class="strat-name" style="font-weight:${sel?600:400}">${s}</div>
+        <div class="strat-track"><div class="strat-fill" style="width:${d.pct}%;background:${col}"></div></div>
+        <div class="strat-pct">${d.pct}%</div>
+        ${sel ? '<span class="badge bt">predicted</span>' : '<span style="width:62px"></span>'}
+      </div>`;
+    }).join('');
+
+  // ── 2026 result at this circuit ──
+  let result2026 = '';
+  if (gpData.result_2026 && gpData.result_2026.length) {
+    const drvResult = gpData.result_2026.find(r => r.driver === driver || r.driver === driver.replace(' ','').toLowerCase());
+    if (drvResult) {
+      result2026 = `<div style="margin-top:.875rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;font-size:13px">
+        <span style="color:var(--muted);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">2026 result at ${gpName}</span><br>
+        <span style="font-size:15px;font-weight:600">${driver} — Grid P${drvResult.grid} → Finished P${drvResult.finish}</span>
+        <span style="color:var(--muted);margin-left:8px">${drvResult.strategy||''}</span>
+      </div>`;
+    }
+  }
+
+  const gainStr = gain > 0 ? `+${(gain).toFixed(1)}` : (gain).toFixed(1);
+  const gainCol = gain > 0 ? 'var(--green)' : gain < 0 ? 'var(--danger)' : 'var(--text)';
+
+  area.innerHTML = `
+  <div class="card" style="margin-top:1rem">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:1rem">
+      <div>
+        <div style="font-size:16px;font-weight:600">${gpName} GP 2026 ${sprintBadge}</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:2px">${driver} · Grid P${gridPos} · ${wLabel} · ${fmtDate(calRace?.date||'')}</div>
+      </div>
+      <span class="badge ${confClass}">📊 ${conf} confidence (${dataPoints} races)</span>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="ml">Predicted strategy</div>
+        <div class="mv">${strat}</div>
+        <div class="ms">${numStops} pit stop${numStops>1?'s':''} · ${totalLaps} laps</div>
+      </div>
+      <div class="metric">
+        <div class="ml">Expected position gain</div>
+        <div class="mv" style="color:${gainCol}">${gainStr}</div>
+        <div class="ms">vs grid P${gridPos}</div>
+      </div>
+      <div class="metric">
+        <div class="ml">Predicted finish</div>
+        <div class="mv">P${predFinish}</div>
+        <div class="ms">From grid P${gridPos}</div>
+      </div>
+    </div>
+    ${result2026}
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <div class="sec-label">Stint timeline</div>
+    <div class="timeline">${timeline}</div>
+    <div style="border-top:1px solid var(--border);padding-top:1rem">
+      <div class="sec-label">Pit stop windows</div>
+      <div class="stop-grid">${stopCards || '<p style="color:var(--muted);font-size:13px">No pit stops needed.</p>'}</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:1rem">
+    <div class="sec-label">Historical strategy at ${gpName} (Mercedes, 2018–present)</div>
+    <div style="margin-top:.5rem">${stratBars}</div>
+    <div style="margin-top:.875rem;font-size:12px;color:var(--muted)">
+      ${dataPoints} Mercedes race entries · Latest season data: ${gpData.latest_season}
+      ${gpData.driver_tendency?.[driver] ? ` · ${driver.split(' ')[0]}'s recent tendency: ${gpData.driver_tendency[driver]}` : ''}
+    </div>
+  </div>`;
+}
+
+function calcPitLaps(gpData, n, totalLaps, gridPos) {
+  const laps = [];
+  const gf = gridPos <= 3 ? -2 : gridPos >= 15 ? 2 : 0;
+  for (let s = 1; s <= n; s++) {
+    const t = gpData.pit_timing[String(s)];
+    if (t) {
+      let lap = Math.round(t.avg + gf * 0.4);
+      lap = Math.max(t.min, Math.min(t.max, lap));
+      lap = Math.max(5, Math.min(totalLaps - 5, lap));
+      if (laps.length > 0 && lap <= laps[laps.length-1] + 5) {
+        lap = laps[laps.length-1] + Math.max(7, Math.round(totalLaps / (n + 1)));
+      }
+      laps.push(lap);
+    } else {
+      laps.push(Math.round(totalLaps / (n + 1) * s));
+    }
+  }
+  return laps;
+}
+
+// ── Calendar ─────────────────────────────────────────────────────────────────
+function renderCalendar() {
+  if (!DATA) return;
+  const el = document.getElementById('cal-list');
+  el.innerHTML = DATA.calendar_2026.map(r => {
+    const dotCol = r.status === 'done' ? '#b4b2a9' : r.status === 'live' ? 'var(--red)' : 'var(--teal)';
+    const statusBadge = r.status === 'done'
+      ? '<span class="badge" style="background:#f0f0f0;color:#666">Done</span>'
+      : r.status === 'live'
+      ? '<span class="badge br" style="animation:pulse 1.4s infinite">LIVE</span>'
+      : '<span class="badge bt">Upcoming</span>';
+    const sprint = r.sprint ? '<span style="font-size:10px;color:var(--muted);margin-left:4px">⚡Sprint</span>' : '';
+    let results = '';
+    if (r.results_2026) {
+      const parts = Object.entries(r.results_2026).map(([d,f]) => `${d.split(' ')[1]||d.split(' ')[0]} P${f}`);
+      results = `<span class="cal-result">${parts.join(' · ')}</span>`;
+    }
+    return `<div class="cal-row">
+      <div class="cal-dot" style="background:${dotCol}"></div>
+      <div class="cal-name">R${r.round} ${r.name}${sprint}</div>
+      ${results}
+      <div class="cal-date">${fmtDate(r.date)}</div>
+      ${statusBadge}
+    </div>`;
+  }).join('');
+}
+
+// ── Form ─────────────────────────────────────────────────────────────────────
+function renderForm() {
+  if (!DATA) return;
+
+  // Driver stat cards
+  const stats = DATA.driver_stats_2026;
+  const drivers = Object.entries(stats);
+  const driverHTML = `<div class="driver-grid" style="margin-bottom:1rem">${drivers.map(([name, s]) => {
+    const num = name.includes('Russell') ? '#63' : '#12';
+    return `<div class="driver-card">
+      <div class="driver-name">${name}<span class="driver-num">${num}</span></div>
+      <div class="driver-stats-grid">
+        <div class="ds"><div class="ds-l">Points</div><div class="ds-v" style="color:var(--teal)">${s.points}</div></div>
+        <div class="ds"><div class="ds-l">Wins</div><div class="ds-v">${s.wins}</div></div>
+        <div class="ds"><div class="ds-l">Podiums</div><div class="ds-v">${s.podiums}</div></div>
+        <div class="ds"><div class="ds-l">Avg finish</div><div class="ds-v">P${s.avg_finish}</div></div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+  document.getElementById('driver-stats-wrap').innerHTML = driverHTML;
+
+  // Race-by-race table
+  const doneRaces = DATA.calendar_2026.filter(r => r.status === 'done' && r.results_2026);
+  if (!doneRaces.length) {
+    document.getElementById('form-table').innerHTML = '<div class="empty">No completed races yet.</div>';
+    return;
+  }
+
+  const posColor = p => {
+    if (p === 'DNF') return 'var(--danger)';
+    if (p <= 3) return 'var(--green)';
+    if (p <= 6) return 'var(--blue)';
+    return 'var(--text)';
+  };
+
+  const driverNames = Object.keys(stats);
+  const headers = ['Race', ...driverNames.map(d => d.split(' ').pop()), ...driverNames.map(d => d.split(' ').pop() + ' Grid')];
+
+  const rows = doneRaces.map(r => {
+    const res = r.results_2026;
+    return `<tr>
+      <td>R${r.round} ${r.name}</td>
+      ${driverNames.map(d => {
+        const f = res[d];
+        return `<td style="font-weight:600;color:${posColor(f)}">P${f}</td>`;
+      }).join('')}
+    </tr>`;
+  }).join('');
+
+  document.getElementById('form-table').innerHTML = `
+    <table class="form-table">
+      <thead><tr>
+        <th>Race</th>
+        ${driverNames.map(d=>`<th style="color:var(--teal)">${d.split(' ').pop()} Finish</th>`).join('')}
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div style="margin-top:1rem;display:flex;gap:16px;font-size:11px;color:var(--muted)">
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--green);margin-right:4px"></span>Podium</span>
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--blue);margin-right:4px"></span>Top 6</span>
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--danger);margin-right:4px"></span>DNF</span>
+    </div>`;
+}
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+function switchTab(t) {
+  document.querySelectorAll('.tab').forEach((b,i) => b.classList.toggle('active', ['predict','calendar','form'][i] === t));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + t).classList.add('active');
+}
+function setW(el, w) {
+  document.querySelectorAll('.wbtn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active'); selW = w;
+}
+function clearResult() { document.getElementById('result').innerHTML = ''; }
+function fmtDate(d) {
+  if (!d) return '';
+  return new Date(d).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+}
+
+// ── Fallback embedded data (used if fetch fails) ──────────────────────────────
+// This snapshot is replaced on every GitHub Actions run via the live JSON file.
+// If you see this in the app, the live fetch failed — check the data/ folder.
+const FALLBACK_DATA = {"meta":{"last_updated":"2026-06-14T08:44:11.879602+00:00","generated_by":"update_data.py","current_season":2026,"current_round":6,"total_rounds":22,"next_race":{"round":7,"name":"Spain","date":"2026-06-14","circuit":"Barcelona","status":"live"},"data_seasons":"2018–2026","total_race_entries":358},"gp_model":{"Azerbaijan":{"total_laps":51,"strategy_distribution":{"1-stop":{"count":8,"pct":57},"2-stop":{"count":4,"pct":29},"3-stop":{"count":2,"pct":14}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":16.3,"std":10.1,"min":9,"max":40,"count":14},"2":{"avg":41.5,"std":6.6,"min":33,"max":49,"count":6},"3":{"avg":48.0,"std":0.0,"min":48,"max":48,"count":2}},"avg_position_gain_by_strategy":{"2-stop":2.2,"1-stop":-1.0,"3-stop":-7.5},"driver_tendency":{"George Russell":"1-stop","Lewis Hamilton":"1-stop","kimi-antonelli":"1-stop"},"data_points":14,"latest_season":2025,"result_2026":null},"Australia":{"total_laps":58,"strategy_distribution":{"1-stop":{"count":9,"pct":64},"2-stop":{"count":2,"pct":14},"3-stop":{"count":1,"pct":7},"5-stop":{"count":2,"pct":14}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":13.2,"std":7.7,"min":2,"max":25,"count":14},"2":{"avg":22.8,"std":22.5,"min":3,"max":55,"count":5},"3":{"avg":21.7,"std":25.0,"min":4,"max":57,"count":3}},"avg_position_gain_by_strategy":{"1-stop":1.2,"3-stop":1.0,"2-stop":-10.0,"5-stop":6.5},"driver_tendency":{"George Russell":"5-stop","kimi-antonelli":"5-stop"},"data_points":14,"latest_season":2026,"result_2026":[{"driver":"George Russell","grid":1,"finish":1,"strategy":"1-stop","points":25},{"driver":"kimi-antonelli","grid":2,"finish":2,"strategy":"1-stop","points":18}]},"Sao Paulo":{"total_laps":71,"strategy_distribution":{"2-stop":{"count":8,"pct":57},"4-stop":{"count":4,"pct":29},"1-stop":{"count":1,"pct":7},"3-stop":{"count":1,"pct":7}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":18.7,"std":10.3,"min":1,"max":34,"count":14},"2":{"avg":32.2,"std":19.4,"min":2,"max":59,"count":13},"3":{"avg":31.8,"std":17.7,"min":18,"max":66,"count":5},"4":{"avg":43.8,"std":1.9,"min":41,"max":46,"count":4}},"avg_position_gain_by_strategy":{"2-stop":0.3,"4-stop":1.3},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"2-stop"},"data_points":14,"latest_season":2025,"result_2026":null},"China":{"total_laps":56,"strategy_distribution":{"1-stop":{"count":6,"pct":60},"2-stop":{"count":4,"pct":40}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":14.6,"std":4.7,"min":9,"max":22,"count":10},"2":{"avg":29.0,"std":7.0,"min":21,"max":36,"count":4}},"avg_position_gain_by_strategy":{"1-stop":0.3,"2-stop":2.8},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":10,"latest_season":2026,"result_2026":[{"driver":"kimi-antonelli","grid":1,"finish":1,"strategy":"1-stop","points":25},{"driver":"George Russell","grid":2,"finish":2,"strategy":"1-stop","points":18}]},"Hungary":{"total_laps":70,"strategy_distribution":{"2-stop":{"count":9,"pct":56},"1-stop":{"count":3,"pct":19},"3-stop":{"count":2,"pct":12},"4-stop":{"count":1,"pct":6}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":16.7,"std":9.9,"min":2,"max":33,"count":15},"2":{"avg":40.8,"std":12.5,"min":4,"max":53,"count":12},"3":{"avg":44.7,"std":19.4,"min":19,"max":66,"count":3}},"avg_position_gain_by_strategy":{"1-stop":0.7,"2-stop":2.2,"3-stop":-0.5,"4-stop":-1.0},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"1-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Canada":{"total_laps":70,"strategy_distribution":{"2-stop":{"count":6,"pct":43},"1-stop":{"count":5,"pct":36},"3-stop":{"count":2,"pct":14}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":20.8,"std":8.5,"min":9,"max":36,"count":13},"2":{"avg":45.5,"std":8.4,"min":38,"max":67,"count":8},"3":{"avg":54.0,"std":0.0,"min":54,"max":54,"count":2}},"avg_position_gain_by_strategy":{"1-stop":0.2,"2-stop":1.3,"3-stop":0.5},"driver_tendency":{"George Russell":"2-stop","kimi-antonelli":"2-stop"},"data_points":14,"latest_season":2026,"result_2026":[{"driver":"kimi-antonelli","grid":2,"finish":1,"strategy":"1-stop","points":25},{"driver":"George Russell","grid":1,"finish":"DNF","strategy":"0-stop","points":null}]},"Qatar":{"total_laps":57,"strategy_distribution":{"2-stop":{"count":3,"pct":38},"4-stop":{"count":3,"pct":38},"1-stop":{"count":1,"pct":12}},"most_common_strategy":"2-stop","recent_most_common":"4-stop","pit_timing":{"1":{"avg":17.6,"std":12.2,"min":1,"max":34,"count":7},"2":{"avg":31.7,"std":8.6,"min":14,"max":42,"count":6},"3":{"avg":34.7,"std":1.9,"min":32,"max":36,"count":3},"4":{"avg":44.7,"std":5.6,"min":37,"max":50,"count":3}},"avg_position_gain_by_strategy":{"2-stop":-0.7,"4-stop":-3.7},"driver_tendency":{"George Russell":"4-stop","Lewis Hamilton":"4-stop","kimi-antonelli":"2-stop"},"data_points":8,"latest_season":2025,"result_2026":null},"Japan":{"total_laps":53,"strategy_distribution":{"2-stop":{"count":7,"pct":50},"1-stop":{"count":5,"pct":36},"3-stop":{"count":2,"pct":14}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":16.7,"std":9.3,"min":1,"max":31,"count":16},"2":{"avg":24.4,"std":12.8,"min":7,"max":42,"count":7},"3":{"avg":38.0,"std":1.0,"min":37,"max":39,"count":2}},"avg_position_gain_by_strategy":{"1-stop":0.2,"2-stop":0.6,"3-stop":0.0},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":14,"latest_season":2026,"result_2026":[{"driver":"kimi-antonelli","grid":1,"finish":1,"strategy":"2-stop","points":25},{"driver":"George Russell","grid":2,"finish":4,"strategy":"2-stop","points":12}]},"Monaco":{"total_laps":78,"strategy_distribution":{"2-stop":{"count":9,"pct":56},"1-stop":{"count":5,"pct":31},"3-stop":{"count":1,"pct":6}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":24.3,"std":18.7,"min":1,"max":69,"count":14},"2":{"avg":49.0,"std":19.3,"min":12,"max":71,"count":10}},"avg_position_gain_by_strategy":{"1-stop":0.6,"2-stop":-0.6,"3-stop":0.0},"driver_tendency":{"George Russell":"2-stop","kimi-antonelli":"2-stop"},"data_points":16,"latest_season":2026,"result_2026":[{"driver":"kimi-antonelli","grid":1,"finish":1,"strategy":"2-stop","points":25},{"driver":"George Russell","grid":6,"finish":12,"strategy":"2-stop","points":null}]},"Netherlands":{"total_laps":72,"strategy_distribution":{"2-stop":{"count":4,"pct":40},"3-stop":{"count":4,"pct":40},"5-stop":{"count":1,"pct":10},"7-stop":{"count":1,"pct":10}},"most_common_strategy":"3-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":21.2,"std":9.5,"min":3,"max":31,"count":10},"2":{"avg":42.7,"std":17.9,"min":9,"max":67,"count":10},"3":{"avg":49.7,"std":16.8,"min":16,"max":70,"count":6}},"avg_position_gain_by_strategy":{"3-stop":-0.2,"2-stop":1.0,"5-stop":7.0},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"3-stop"},"data_points":10,"latest_season":2025,"result_2026":null},"Great Britain":{"total_laps":52,"strategy_distribution":{"1-stop":{"count":7,"pct":44},"2-stop":{"count":6,"pct":38},"3-stop":{"count":2,"pct":12}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":16.0,"std":10.5,"min":1,"max":33,"count":15},"2":{"avg":32.8,"std":12.3,"min":9,"max":50,"count":8},"3":{"avg":29.5,"std":9.5,"min":20,"max":39,"count":2}},"avg_position_gain_by_strategy":{"1-stop":0.8,"2-stop":-2.3,"3-stop":2.0},"driver_tendency":{"George Russell":"1-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"3-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"United States":{"total_laps":56,"strategy_distribution":{"2-stop":{"count":7,"pct":50},"1-stop":{"count":5,"pct":36},"3-stop":{"count":1,"pct":7}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":20.8,"std":8.8,"min":11,"max":40,"count":13},"2":{"avg":36.2,"std":1.7,"min":34,"max":39,"count":8}},"avg_position_gain_by_strategy":{"2-stop":0.3,"1-stop":-1.8},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":14,"latest_season":2025,"result_2026":null},"Italy":{"total_laps":53,"strategy_distribution":{"1-stop":{"count":10,"pct":62},"2-stop":{"count":5,"pct":31},"3-stop":{"count":1,"pct":6}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":24.1,"std":6.2,"min":11,"max":36,"count":16},"2":{"avg":36.3,"std":9.1,"min":26,"max":49,"count":6}},"avg_position_gain_by_strategy":{"1-stop":3.6,"2-stop":-1.6},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"1-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Madrid":{"total_laps":55,"strategy_distribution":{"1-stop":{"count":1,"pct":50},"2-stop":{"count":1,"pct":50}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":22.0,"std":0.0,"min":22,"max":22,"count":1},"2":{"avg":40.0,"std":0.0,"min":40,"max":40,"count":1}},"avg_position_gain_by_strategy":{},"driver_tendency":{},"data_points":1,"latest_season":2026,"result_2026":null},"Belgium":{"total_laps":44,"strategy_distribution":{"1-stop":{"count":7,"pct":44},"2-stop":{"count":4,"pct":25},"3-stop":{"count":2,"pct":12}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":12.4,"std":6.6,"min":1,"max":23,"count":13},"2":{"avg":22.5,"std":9.6,"min":2,"max":30,"count":6},"3":{"avg":35.5,"std":6.5,"min":29,"max":42,"count":2}},"avg_position_gain_by_strategy":{"2-stop":0.7,"3-stop":6.0,"1-stop":0.8},"driver_tendency":{"George Russell":"1-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"2-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Singapore":{"total_laps":62,"strategy_distribution":{"1-stop":{"count":9,"pct":75},"2-stop":{"count":2,"pct":17}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":22.3,"std":5.2,"min":15,"max":34,"count":12},"2":{"avg":41.0,"std":4.2,"min":35,"max":44,"count":3}},"avg_position_gain_by_strategy":{"1-stop":-1.3,"2-stop":-6.0},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":12,"latest_season":2025,"result_2026":null},"Abu Dhabi":{"total_laps":58,"strategy_distribution":{"1-stop":{"count":12,"pct":75},"2-stop":{"count":4,"pct":25}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":19.4,"std":8.4,"min":7,"max":34,"count":16},"2":{"avg":37.0,"std":2.5,"min":34,"max":40,"count":4}},"avg_position_gain_by_strategy":{"1-stop":1.2,"2-stop":0.2},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Austria":{"total_laps":71,"strategy_distribution":{"2-stop":{"count":9,"pct":56},"1-stop":{"count":3,"pct":19},"3-stop":{"count":2,"pct":12}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":20.9,"std":9.3,"min":2,"max":31,"count":14},"2":{"avg":43.6,"std":14.7,"min":14,"max":56,"count":11},"3":{"avg":41.5,"std":0.5,"min":41,"max":42,"count":2}},"avg_position_gain_by_strategy":{"1-stop":0.7,"2-stop":1.1,"3-stop":0.5},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Miami":{"total_laps":57,"strategy_distribution":{"1-stop":{"count":10,"pct":100}},"most_common_strategy":"1-stop","recent_most_common":"1-stop","pit_timing":{"1":{"avg":26.6,"std":6.8,"min":17,"max":40,"count":10}},"avg_position_gain_by_strategy":{"1-stop":1.7},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"1-stop"},"data_points":10,"latest_season":2026,"result_2026":[{"driver":"kimi-antonelli","grid":1,"finish":1,"strategy":"1-stop","points":25},{"driver":"George Russell","grid":5,"finish":4,"strategy":"1-stop","points":12}]},"Spain":{"total_laps":66,"strategy_distribution":{"2-stop":{"count":10,"pct":62},"3-stop":{"count":4,"pct":25},"1-stop":{"count":2,"pct":12}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":20.6,"std":6.6,"min":1,"max":28,"count":16},"2":{"avg":43.3,"std":7.6,"min":22,"max":53,"count":14},"3":{"avg":54.5,"std":6.0,"min":48,"max":64,"count":4}},"avg_position_gain_by_strategy":{"1-stop":0.0,"2-stop":1.2,"3-stop":0.2},"driver_tendency":{"George Russell":"2-stop","Lewis Hamilton":"2-stop","kimi-antonelli":"2-stop"},"data_points":16,"latest_season":2025,"result_2026":null},"Las Vegas":{"total_laps":50,"strategy_distribution":{"2-stop":{"count":4,"pct":67},"1-stop":{"count":2,"pct":33}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":12.7,"std":5.1,"min":2,"max":17,"count":6},"2":{"avg":27.8,"std":2.5,"min":26,"max":32,"count":4}},"avg_position_gain_by_strategy":{"2-stop":1.5,"1-stop":8.0},"driver_tendency":{"George Russell":"2-stop","kimi-antonelli":"1-stop"},"data_points":6,"latest_season":2025,"result_2026":null},"Mexico":{"total_laps":71,"strategy_distribution":{"2-stop":{"count":6,"pct":43},"1-stop":{"count":6,"pct":43},"3-stop":{"count":1,"pct":7}},"most_common_strategy":"2-stop","recent_most_common":"2-stop","pit_timing":{"1":{"avg":23.6,"std":9.4,"min":1,"max":36,"count":14},"2":{"avg":45.9,"std":10.4,"min":34,"max":69,"count":8}},"avg_position_gain_by_strategy":{"2-stop":0.0,"1-stop":1.3},"driver_tendency":{"George Russell":"1-stop","kimi-antonelli":"2-stop"},"data_points":14,"latest_season":2025,"result_2026":null}},"calendar_2026":[{"round":1,"name":"Australia","date":"2026-03-08","circuit":"Melbourne","status":"done","results_2026":{"George Russell":1,"Kimi Antonelli":2}},{"round":2,"name":"China","date":"2026-03-15","circuit":"Shanghai","sprint":true,"status":"done","results_2026":{"George Russell":2,"Kimi Antonelli":1}},{"round":3,"name":"Japan","date":"2026-03-29","circuit":"Suzuka","status":"done","results_2026":{"George Russell":4,"Kimi Antonelli":1}},{"round":4,"name":"Miami","date":"2026-05-03","circuit":"Miami Gardens","status":"done","results_2026":{"George Russell":4,"Kimi Antonelli":1}},{"round":5,"name":"Canada","date":"2026-05-25","circuit":"Montreal","status":"done","results_2026":{"George Russell":"DNF","Kimi Antonelli":1}},{"round":6,"name":"Monaco","date":"2026-06-07","circuit":"Monaco","status":"done","results_2026":{"George Russell":12,"Kimi Antonelli":1}},{"round":7,"name":"Spain","date":"2026-06-14","circuit":"Barcelona","status":"live"},{"round":8,"name":"Austria","date":"2026-06-28","circuit":"Red Bull Ring","status":"upcoming"},{"round":9,"name":"Great Britain","date":"2026-07-05","circuit":"Silverstone","sprint":true,"status":"upcoming"},{"round":10,"name":"Belgium","date":"2026-07-19","circuit":"Spa-Francorchamps","status":"upcoming"},{"round":11,"name":"Hungary","date":"2026-07-26","circuit":"Hungaroring","status":"upcoming"},{"round":12,"name":"Netherlands","date":"2026-08-23","circuit":"Zandvoort","sprint":true,"status":"upcoming"},{"round":13,"name":"Italy","date":"2026-09-06","circuit":"Monza","status":"upcoming"},{"round":14,"name":"Madrid","date":"2026-09-13","circuit":"Madrid","status":"upcoming"},{"round":15,"name":"Azerbaijan","date":"2026-09-27","circuit":"Baku","status":"upcoming"},{"round":16,"name":"Singapore","date":"2026-10-11","circuit":"Marina Bay","sprint":true,"status":"upcoming"},{"round":17,"name":"United States","date":"2026-10-25","circuit":"COTA","status":"upcoming"},{"round":18,"name":"Mexico","date":"2026-11-01","circuit":"Mexico City","status":"upcoming"},{"round":19,"name":"Sao Paulo","date":"2026-11-08","circuit":"Interlagos","status":"upcoming"},{"round":20,"name":"Las Vegas","date":"2026-11-21","circuit":"Las Vegas Strip","status":"upcoming"},{"round":21,"name":"Qatar","date":"2026-11-29","circuit":"Lusail","status":"upcoming"},{"round":22,"name":"Abu Dhabi","date":"2026-12-06","circuit":"Yas Marina","status":"upcoming"}],"driver_stats_2026":{"George Russell":{"races":6,"wins":1,"podiums":2,"points":67,"avg_finish":4.6},"Kimi Antonelli":{"races":6,"wins":5,"podiums":6,"points":143,"avg_finish":1.2}}};
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
